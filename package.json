@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/EDUARDOCD18/Festival-de-M-sica-con-SASS-y-GULP/issues"
   },
-  "homepage": "https://github.com/EDUARDOCD18/Festival-de-M-sica-con-SASS-y-GULP#readme"
+  "homepage": "https://github.com/EDUARDOCD18/Festival-de-M-sica-con-SASS-y-GULP#readme",
+  "devDependencies": {
+    "sass": "^1.71.1"
+  }
 }
