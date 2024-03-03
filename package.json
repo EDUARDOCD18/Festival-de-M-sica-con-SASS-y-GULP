@@ -1,0 +1,23 @@
+{
+  "name": "festival_musica",
+  "version": "1.0.0",
+  "description": "Proyecto con SASS y GULP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/EDUARDOCD18/Festival-de-M-sica-con-SASS-y-GULP.git"
+  },
+  "keywords": [
+    "SASS",
+    "Gulp"
+  ],
+  "author": "Javier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EDUARDOCD18/Festival-de-M-sica-con-SASS-y-GULP/issues"
+  },
+  "homepage": "https://github.com/EDUARDOCD18/Festival-de-M-sica-con-SASS-y-GULP#readme"
+}
