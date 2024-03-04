@@ -1,3 +1,4 @@
 /node_modules
 ._img
 ._video
+._.DS_Store
