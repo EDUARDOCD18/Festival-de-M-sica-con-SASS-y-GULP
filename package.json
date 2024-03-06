@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/EDUARDOCD18/Festival-de-M-sica-con-SASS-y-GULP#readme",
   "devDependencies": {
+    "gulp": "^4.0.2",
     "sass": "^1.71.1"
   }
 }
