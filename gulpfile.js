@@ -1,9 +1,12 @@
-/* gulp se utiliza para automatizar tareas */
-function tarea(done) {
-  console.log("Mi primera tarea");
+const { src, dest } = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
 
-  done()
+function css(done) {
+  // Identificar el archivo de sass
+  // Compilar sass
+  // Almacenar
+  src("src/scss/app.scss").pipe(sass()).pipe(dest("build/css"));
+  done();
 }
 
-// Gulp requiere node.js para funcionar
-exports.tarea = tarea;
+exports.css = css;
