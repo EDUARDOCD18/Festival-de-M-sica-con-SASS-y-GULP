@@ -1,5 +1,6 @@
-$rojo: rgb(137, 76, 236);
+@import "base/variables";
+@import "contenido/contenido";
 
-body{
-    background-color: $rojo;
+body {
+  background-color: $rojo;
 }
