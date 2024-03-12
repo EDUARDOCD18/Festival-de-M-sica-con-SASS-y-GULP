@@ -1,7 +1,8 @@
 body {
-  background-color: rgb(230, 39, 39);
+  background-color: rgb(211, 33, 33);
 }
 
 h1 {
-  color: green;
+  color: rgb(160, 229, 166);
+  text-transform: uppercase;
 }

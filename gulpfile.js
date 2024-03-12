@@ -2,18 +2,18 @@ const { src, dest, watch } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 
 function css(done) {
-  // Identificar el archivo de sass
-  // Compilar sass
-  // Almacenar
-  src("src/scss/app.scss").pipe(sass()).pipe(dest("build/css"));
+  src("src/scss/**/*.scss") // Identificar el archivo de sass
+    .pipe(sass()) // Compilar sass
+    .pipe(dest("build/css")); // Almacenar
+
   done();
 }
 
 function dev(done) {
-  watch("src/scss/app.scss", css);
+  watch("src/scss/**/*.scss", css);
   done();
 }
 
 // Exportaciones o tareas ejecutables
 exports.css = css;
-exports.dev = dev
+exports.dev = dev;
