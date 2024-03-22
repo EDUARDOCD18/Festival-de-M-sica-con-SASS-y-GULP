@@ -1,0 +1,30 @@
+@use "variables" as v;
+
+// -- Tamaño para teléfono --
+@mixin telefono {
+  @media (min-width: v.$telefono) {
+    @content;
+  }
+}
+
+// -- Tamaño para tablet --
+@mixin tablet {
+  @media (min-width: v.$tablet) {
+    @content;
+  }
+}
+
+// -- Tamaño para desktop --
+@mixin desktop {
+  @media (min-width: v.$desktop) {
+    @content;
+  }
+}
+
+// -- Tamaño para desktopXL --
+@mixin desktopXL {
+  @media (min-width: v.$desktopXL) {
+    @content;
+  }
+}
+
