@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -358,39 +359,58 @@ h3 {
   font-size: 3rem;
 }
 
+/* -- Estilos para el header -- */
 .header {
   background-color: #4cb8b3;
+  /* -- Estilos para el h1 del header -- */
+  /* -- Estilos para el .contenido-header -- */
 }
 .header h1 {
   color: #fff;
+  text-align: center;
+  /* -- header en tamaño tablet -- */
+}
+@media (min-width: 798px) {
+  .header h1 {
+    margin: 0;
+  }
+}
+.header .contenido-header {
+  padding: 2rem;
+  /* -- .contenido-header en tamaño tablet -- */
+}
+@media (min-width: 798px) {
+  .header .contenido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
+/* -- Estilos para la navegación -- */
 .navegacion-principal {
-  background-color: red;
-}
-@media (min-width: 480px) {
-  .navegacion-principal {
-    background-color: blue;
-  }
+  /* -- navegación en tamaño tablet -- */
+  /*-- Estilos para los enlaces de la navegación-- */
 }
 @media (min-width: 798px) {
   .navegacion-principal {
-    background-color: cornflowerblue;
-  }
-}
-@media (min-width: 992px) {
-  .navegacion-principal {
-    background-color: #4cb8b3;
-  }
-}
-@media (min-width: 1200px) {
-  .navegacion-principal {
-    background-color: #fef46d;
+    display: flex;
+    gap: 2rem;
   }
 }
 .navegacion-principal a {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
   color: #fff;
   font-size: 2.4rem;
+  /* -- enlaces de la navegación en tamaño tablet -- */
+  /*-- psudoclases para la navegación */
+}
+@media (min-width: 798px) {
+  .navegacion-principal a {
+    margin: 0;
+  }
 }
 .navegacion-principal a:hover, .navegacion-principal a:focus {
   color: #fef46d;

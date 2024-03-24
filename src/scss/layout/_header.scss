@@ -1,39 +1,56 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
 
+/* -- Estilos para el header -- */
 .header {
   background-color: v.$verde;
+
+  /* -- Estilos para el h1 del header -- */
   h1 {
     color: v.$blanco;
+    text-align: center;
+
+    /* -- header en tamaño tablet -- */
+    @include m.tablet {
+      margin: 0; // margin de 0 para el h1 en el tamaño de tablet
+    }
+  }
+
+  /* -- Estilos para el .contenido-header -- */
+  .contenido-header {
+    padding: 2rem;
+
+    /* -- .contenido-header en tamaño tablet -- */
+    @include m.tablet {
+      display: flex; // Aplica flex al tamaño tablet
+      justify-content: space-between; // espaciado entre items
+      align-items: center; // items alineados al centro
+    }
   }
 }
 
+/* -- Estilos para la navegación -- */
 .navegacion-principal {
-  background-color: red;
-
-  // -- Tamaño para telefono --
-  @include m.telefono {
-    background-color: blue;
-  }
-
-  // -- Tamaño para tablet --
+  /* -- navegación en tamaño tablet -- */
   @include m.tablet {
-    background-color: cornflowerblue;
+    display: flex; // Aplica flex al tamaño tablet
+    gap: 2rem; // separacaión pareja
   }
 
-  // -- Tamaño para desktop --
-  @include m.desktop {
-    background-color: v.$verde;
-  }
-  // -- Tamaño para desktopXL --
-  @include m.desktopXL {
-    background-color: v.$amarillo;
-  }
-
+  /*-- Estilos para los enlaces de la navegación-- */
   a {
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
     color: v.$blanco;
     font-size: 2.4rem;
 
+    /* -- enlaces de la navegación en tamaño tablet -- */
+    @include m.tablet {
+      margin: 0;
+    }
+
+    /*-- psudoclases para la navegación */
     &:hover,
     &:focus {
       color: v.$amarillo;
