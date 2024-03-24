@@ -10,7 +10,7 @@
     color: v.$blanco;
     text-align: center;
 
-    /* -- header en tamaño tablet -- */
+    /* -- h1 del header en tamaño tablet -- */
     @include m.tablet {
       margin: 0; // margin de 0 para el h1 en el tamaño de tablet
     }

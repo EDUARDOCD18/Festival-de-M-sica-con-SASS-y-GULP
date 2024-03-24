@@ -375,7 +375,7 @@ h3 {
 .header h1 {
   color: #fff;
   text-align: center;
-  /* -- header en tamaño tablet -- */
+  /* -- h1 del header en tamaño tablet -- */
 }
 @media (min-width: 798px) {
   .header h1 {
