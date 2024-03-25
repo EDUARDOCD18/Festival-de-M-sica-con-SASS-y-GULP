@@ -1,11 +1,14 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
 
-/* Estilos para .video */
+/* -- Estilos para .video -- */
 .video {
   position: relative;
+  min-height: 50rem;
+  max-height: 70rem;
+  overflow: hidden;
 
-  /* Estilos para .overlay */
+  /* -- Estilos para .overlay -- */
   .overlay {
     position: absolute;
     background: rgb(165, 3, 255);
@@ -16,11 +19,42 @@
     );
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  /* Estilos para <video> */
+  /* -- Estilos para <video> -- */
   video {
-    width: 100%;
+    width: auto;
     display: block;
+
+    /* -- <video> en tamaño desktop -- */
+    @include m.desktop {
+      width: 100%;
+    }
+  }
+}
+
+/* -- Estilos para .contenido-video -- */
+.contenido-video {
+  z-index: 10;
+
+  /* -- Estilos para <h2> de .contenido-video -- */
+  h2 {
+    color: v.$blanco;
+    font-size: 7rem;
+    margin: 0;
+  }
+  
+  /* -- Estilos para <p> de .contenido-video -- */
+  p {
+    background-color: v.$rosa;
+    display: inline-block;
+    padding: 1rem 2rem;
+    color: v.$blanco;
+    font-weight: 700;
+    font-size: 2.4rem;
+    margin: 0;
   }
 }
