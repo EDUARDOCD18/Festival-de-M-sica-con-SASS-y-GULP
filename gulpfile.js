@@ -1,6 +1,10 @@
-const { src, dest, watch } = require("gulp");
+// CSS
+const { src, dest, watch, parallel } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const plumber = require("gulp-plumber");
+
+// Imágenes
+const webp = require("gulp-webp");
 
 /* -- Función para compilar el CSS-- */
 function css(done) {
@@ -8,7 +12,18 @@ function css(done) {
     .pipe(plumber())
     .pipe(sass()) // Compilar sass
     .pipe(dest("build/css")); // Almacenar
+  done();
+}
 
+/* -- Función para convertir imágenes a webp -- */
+function versionWebp(done) {
+  const opciones = {
+    quality: 50,
+  };
+
+  src("src/img/**/*.{png,jpg}") // Fuente de los archivos
+    .pipe(webp(opciones)) // Conversión
+    .pipe(dest("build/img")); // Guardar cambios
   done();
 }
 
@@ -20,4 +35,5 @@ function dev(done) {
 
 /* -- Exportaciones o tareas ejecutables -- */
 exports.css = css;
-exports.dev = dev;
+exports.versionWebp = versionWebp;
+exports.dev = parallel(versionWebp, dev);
