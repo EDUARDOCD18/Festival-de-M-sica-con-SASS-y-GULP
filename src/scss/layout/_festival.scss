@@ -1,23 +1,35 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
 
+/* -- Estilos para.sobre-festival -- */
 .sobre-festival {
   padding: 5rem 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 5rem;
+
+  /* -- .sobre-festival en tamaño tablet -- */
+  @include m.tablet {
+    @include m.grid(2, 5rem);
+  }
 }
 
+/* -- Estilos para .contenido-festival -- */
 .contenido-festival {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 5rem;
 
+  /* -- .contenido-festival en tablet -- */
+  @include m.tablet {
+    margin-top: 0;
+  }
+
+  /* -- Estilos para <h2> de .contenido-festival-- */
   h2 {
     margin-bottom: 2rem;
     font-size: 4rem;
   }
 
+  /* -- Estilos para .fecha detro de .contenido-festival-- */
   .fecha {
     color: v.$rosa;
     font-weight: 700;
