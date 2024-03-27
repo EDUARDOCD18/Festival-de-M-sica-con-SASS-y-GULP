@@ -4,7 +4,8 @@
   "description": "Proyecto con SASS y GULP",
   "main": "gulpfile.js",
   "scripts": {
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "css": "gulp css"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,8 @@
   "homepage": "https://github.com/EDUARDOCD18/Festival-de-M-sica-con-SASS-y-GULP#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
+    "gulp-cache": "^1.1.3",
+    "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^5.1.0",
     "gulp-webp": "^4.0.1",
