@@ -2,3 +2,4 @@
 ._img
 ._video
 ._.DS_Store
+build/img
