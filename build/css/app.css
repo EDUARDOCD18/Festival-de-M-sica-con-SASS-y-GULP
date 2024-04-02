@@ -7,6 +7,7 @@
 /* -- Tamaño para desktop -- */
 /* -- Tamaño para desktopXL -- */
 /* -- grid -- */
+/* -- Resetear listsa -- */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -520,6 +521,7 @@ img {
   font-weight: 700;
 }
 
+/* -- Estilos para lineup -- */
 .lineup {
   background-color: #f53756;
   padding: 5rem 0;
@@ -531,9 +533,11 @@ img {
 }
 .lineup .dia {
   text-transform: uppercase;
-  margin-bottom: 5rem;
+  margin: 5rem 30%;
+  background-color: #d50b2c;
 }
 
+/* -- Estilos para para los escenarios -- */
 @media (min-width: 798px) {
   .escenarios-contenedor {
     display: grid;
@@ -567,10 +571,30 @@ img {
   background-image: url("../img/icono_edm.png");
 }
 
+/* -- Estilos para el calendario -- */
+.calendario {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.calendario li {
+  padding: 2.5rem;
+  font-weight: 700;
+}
+.calendario li span {
+  font-weight: 400;
+}
+
 .bg-amarillo {
   background-color: #fef46d;
+}
+.bg-amarillo li:nth-child(odd) {
+  background-color: #fdee21;
 }
 
 .bg-verde {
   background-color: #4cb8b3;
+}
+.bg-verde li:nth-child(odd) {
+  background-color: #3b9691;
 }
