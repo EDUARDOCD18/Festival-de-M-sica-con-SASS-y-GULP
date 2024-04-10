@@ -54,15 +54,25 @@ function versionAvif(done) {
   done();
 }
 
+/* -- Función para los archivos JS --  */
+function javascript(done) {
+  src("src/js/**/*.js") // Ubica la fuente del JS
+    .pipe(dest("build/js")); // Guarda el archivo en destino
+
+  done();
+}
+
 /* -- Función para llamar el compilado del CSS -- */
 function dev(done) {
   watch("src/scss/**/*.scss", css);
+  watch("src/js/**/*.js", javascript);
   done();
 }
 
 /* -- Exportaciones o tareas ejecutables -- */
 exports.css = css;
+exports.js = javascript;
 exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
 exports.versionAvif = versionAvif;
-exports.dev = parallel(imagenes, versionWebp, versionAvif, dev);
+exports.dev = parallel(imagenes, versionWebp, versionAvif, javascript, dev);
