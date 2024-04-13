@@ -31,21 +31,26 @@ function mostrarImagen(id) {
   const overlay = document.createElement("DIV");
   overlay.appendChild(imagen);
   overlay.classList.add("overlay");
+
+  /* -- Función para cerrar el overlay tocando en cualquier parte del mismo */
   overlay.onclick = function () {
-    body.appendChild(overlay);
-    body.classList.remove("fijar-body");
-    overlay.remove();
+    body.appendChild(overlay); // Agrega overlay al body
+    body.classList.remove("fijar-body"); // Quita clase al body
+    overlay.remove(); // Quita el overlay
   };
 
   /* -- Botón para cerrar el modal */
   const cerrarModal = document.createElement("P");
   cerrarModal.textContent = "X";
   cerrarModal.classList.add("btn-cerrar");
+
+  /* -- Función para cerrar el overlay haciendo click en el botón cerrar */
   cerrarModal.onclick = function () {
-    body.appendChild(overlay);
-    body.classList.remove("fijar-body");
-    overlay.remove();
+    body.appendChild(overlay); // Agrega overlay al body
+    body.classList.remove("fijar-body"); // Quita clase al body
+    overlay.remove(); // Quita el overlay
   };
+  
   overlay.appendChild(cerrarModal);
 
   /* -- Añadir al HTML -- */
