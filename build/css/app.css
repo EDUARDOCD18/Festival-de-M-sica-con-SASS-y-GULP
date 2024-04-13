@@ -599,13 +599,16 @@ img {
   background-color: #3b9691;
 }
 
+/* -- Estilos para galería -- */
 .galeria {
   padding: 5rem 0;
+  /* -- h3 de galería -- */
 }
 .galeria h3 {
   text-align: center;
 }
 
+/* -- imágenes de galería -- */
 .galeria-imagenes {
   margin: 0;
   padding: 0;
@@ -613,6 +616,9 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  /* -- Tamaño teléfono -- */
+  /* -- Tamaño tablet -- */
+  /* -- Tamaño desktop -- */
 }
 @media (min-width: 480px) {
   .galeria-imagenes {
@@ -634,4 +640,13 @@ img {
     grid-template-columns: repeat(6, 1fr);
     gap: 2rem;
   }
+}
+
+/* --  Estilos para el olverlay -- */
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }

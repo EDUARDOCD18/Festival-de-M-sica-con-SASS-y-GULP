@@ -1,27 +1,43 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
 
+/* -- Estilos para galería -- */
 .galeria {
   padding: 5rem 0;
 
+  /* -- h3 de galería -- */
   h3 {
     text-align: center;
   }
 }
 
+/* -- imágenes de galería -- */
 .galeria-imagenes {
   @include m.resetear-lista;
   @include m.grid(2, 2rem);
 
+  /* -- Tamaño teléfono -- */
   @include m.telefono {
     @include m.grid(3, 2rem);
   }
 
+  /* -- Tamaño tablet -- */
   @include m.tablet {
     @include m.grid(4, 2rem);
   }
 
+  /* -- Tamaño desktop -- */
   @include m.desktop {
     @include m.grid(6, 2rem);
   }
+}
+
+
+/* --  Estilos para el olverlay -- */
+.overlay{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
