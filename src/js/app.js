@@ -4,8 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function iniciarApp() {
   crearGaleria();
+  scrollNav();
 }
 
+/* -- Función para crear la galería -- */
 function crearGaleria() {
   const galeria = document.querySelector(".galeria-imagenes");
 
@@ -20,6 +22,21 @@ function crearGaleria() {
 
     galeria.appendChild(imagen);
   }
+}
+
+/* -- Función para el scroll--  */
+function scrollNav() {
+  const enlaces = document.querySelectorAll(".navegacion-principal a");
+  enlaces.forEach((enlace) => {
+    enlace.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const seccionScroll = e.target.attributes.href.value;
+      const seccionScroll2 = "." + seccionScroll.substr(1);
+      const seccion = document.querySelector(seccionScroll2);
+      seccion.scrollIntoView({ behaviour: 'smooth' });
+    });
+  });
 }
 
 function mostrarImagen(id) {
@@ -50,7 +67,7 @@ function mostrarImagen(id) {
     body.classList.remove("fijar-body"); // Quita clase al body
     overlay.remove(); // Quita el overlay
   };
-  
+
   overlay.appendChild(cerrarModal);
 
   /* -- Añadir al HTML -- */
