@@ -5,6 +5,7 @@ const plumber = require("gulp-plumber");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const postcss = require("gulp-postcss");
+const sourcemaps = require("gulp-sourcemaps");
 
 /* DEPENDENCIAS IMÁGENES */
 const cache = require("gulp-cache");
@@ -15,9 +16,11 @@ const avif = require("gulp-avif");
 /* -- Función para compilar el CSS-- */
 function css(done) {
   src("src/scss/**/*.scss") // Identificar el archivo de sass
+    .pipe(sourcemaps.init()) // Inicia sourmaps
     .pipe(plumber())
     .pipe(sass()) // Compilar sass
     .pipe(postcss([autoprefixer(), cssnano()])) // Mejora código CSS
+    .pipe(sourcemaps.write(".")) // Destino de sourcemap
     .pipe(dest("build/css")); // Almacenar
   done();
 }
