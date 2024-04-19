@@ -13,6 +13,9 @@ const imagenmin = require("gulp-imagemin");
 const webp = require("gulp-webp");
 const avif = require("gulp-avif");
 
+/* DEPENDENCIAS PARA JS */
+const terser = require("gulp-terser-js");
+
 /* -- Función para compilar el CSS-- */
 function css(done) {
   src("src/scss/**/*.scss") // Identificar el archivo de sass
@@ -64,6 +67,9 @@ function versionAvif(done) {
 /* -- Función para los archivos JS --  */
 function javascript(done) {
   src("src/js/**/*.js") // Ubica la fuente del JS
+    .pipe(sourcemaps.init()) // Inicia sourcemap
+    .pipe(terser()) // Mejora el código JS
+    .pipe(sourcemaps.write(".")) // Guarda el sourmap
     .pipe(dest("build/js")); // Guarda el archivo en destino
 
   done();
