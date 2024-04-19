@@ -1,41 +1,41 @@
 @use "variables" as v;
 
-/* -- Tamaño para teléfono -- */
+/* -- TAMAÑO TELÉFONO -- */
 @mixin telefono {
   @media (min-width: v.$telefono) {
     @content;
   }
 }
 
-/* -- Tamaño para tablet -- */
+/* -- TAMAÑO TABLET -- */
 @mixin tablet {
   @media (min-width: v.$tablet) {
     @content;
   }
 }
 
-/* -- Tamaño para desktop -- */
+/* -- TAMAÑO DESKTOP -- */
 @mixin desktop {
   @media (min-width: v.$desktop) {
     @content;
   }
 }
 
-/* -- Tamaño para desktopXL -- */
+/* -- TAMAÑO DESKTOP XL -- */
 @mixin desktopXL {
   @media (min-width: v.$desktopXL) {
     @content;
   }
 }
 
-/* -- grid -- */
+/* -- CSS GRID -- */
 @mixin grid($columnas, $espaciado) {
   display: grid;
   grid-template-columns: repeat($columnas, 1fr);
   gap: $espaciado;
 }
 
-/* -- Resetear listsa -- */
+/* -- RESETEAR LISTA -- */
 @mixin resetear-lista {
   margin: 0;
   padding: 0;

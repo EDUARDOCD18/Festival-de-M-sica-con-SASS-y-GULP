@@ -1,23 +1,31 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
 
+/* ESTILOS PARA .boletos */
 .boletos {
   padding: 5rem 0;
 
+  /* h3 DE .boletos */
   h3 {
     text-align: center;
     color: v.$blanco;
     margin-bottom: 2rem;
   }
 
+  /* .contenedor-boletos */
   .contenedor-boletos {
+
+    /* .boletos en tamaño tablet */
     @include m.tablet {
       @include m.grid(2, 5rem);
     }
   }
 }
 
+/* ESTILOS PARA .pase */
 .pase {
+
+  /* .nombre- pase */
   .nombre-pase {
     text-align: center;
     color: v.$blanco;
@@ -25,6 +33,7 @@
     font-size: 2.8rem;
   }
 
+  /* <header> y <footer> de .pase */
   &-header,
   &-footer {
     padding: 0.5rem;

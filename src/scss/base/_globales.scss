@@ -1,6 +1,6 @@
 @use "variables" as v;
 
-// Dando formato al documento HTML
+/* FORMATO AL DOCUMENTO HTML */
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -13,6 +13,7 @@ html {
   box-sizing: inherit;
 }
 
+/* ESTILOS PARA BODY */
 body {
   font-family: v.$fuente-principal;
   font-size: 1.6rem;
@@ -21,46 +22,53 @@ body {
     overflow: hidden;
   }
 
-  &.body-scroll{
+  &.body-scroll {
     padding-top: 8.6rem;
   }
 }
 
+/* PÁRRAFOS DE TODO EL SITIO */
 p {
   font-size: 2rem;
   color: v.$negro;
   line-height: 1.5;
 }
 
+/* ESTILO CONTENEDOR */
 .contenedor {
   width: 95%;
   max-width: 120rem;
   margin: 0 auto;
 }
 
+/* ESTILOS PARA <a> DE TODO EL DOCUMENTO */
 a {
   text-decoration: none;
 }
 
-// Dando formatos a los headings
+/* ESTILOS PARA LOS HEADINS */
 h1,
 h2,
 h3 {
   margin: 0 0 5rem 0;
 }
 
+/* <h1> */
 h1 {
   font-size: 4rem;
 }
 
+/* <h2> */
 h2 {
   font-size: 3.6rem;
 }
 
+/* <h3> */
 h3 {
   font-size: 3rem;
 }
 
+/* ESTILOS PARA <img> DE TODO EL DOCUMENTO */
 img {
   max-width: 100%;
   width: 100%;

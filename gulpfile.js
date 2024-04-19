@@ -7,14 +7,16 @@ const cssnano = require("cssnano");
 const postcss = require("gulp-postcss");
 const sourcemaps = require("gulp-sourcemaps");
 
-/* DEPENDENCIAS IMÁGENES */
+/* -- DEPENDENCIAS IMÁGENES -- */
 const cache = require("gulp-cache");
 const imagenmin = require("gulp-imagemin");
 const webp = require("gulp-webp");
 const avif = require("gulp-avif");
 
-/* DEPENDENCIAS PARA JS */
+/* -- DEPENDENCIAS PARA JS -- */
 const terser = require("gulp-terser-js");
+
+/* -- FUNCIONES CSS-- */
 
 /* -- Función para compilar el CSS-- */
 function css(done) {
@@ -27,6 +29,8 @@ function css(done) {
     .pipe(dest("build/css")); // Almacenar
   done();
 }
+
+/* -- FUNCIONES PARA IMÁGENES-- */
 
 /* -- Función para reducir imágenes -- */
 function imagenes(done) {
@@ -64,6 +68,8 @@ function versionAvif(done) {
   done();
 }
 
+/* -- FUNCIONES JS -- */
+
 /* -- Función para los archivos JS --  */
 function javascript(done) {
   src("src/js/**/*.js") // Ubica la fuente del JS
@@ -75,7 +81,9 @@ function javascript(done) {
   done();
 }
 
-/* -- Función para llamar el compilado del CSS -- */
+/* -- FUNCIONES DE COMPILADO -- */
+
+/* -- Función para llamar al compilado -- */
 function dev(done) {
   watch("src/scss/**/*.scss", css);
   watch("src/js/**/*.js", javascript);
