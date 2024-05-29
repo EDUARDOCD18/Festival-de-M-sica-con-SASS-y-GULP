@@ -7,6 +7,7 @@ function iniciarApp() {
   crearGaleria();
   scrollNav();
   navegacionFija();
+  botonIrArriba();
 }
 
 /* -- FUNCIONES PARA IMÁGENES-- */
@@ -99,5 +100,27 @@ function scrollNav() {
       const seccion = document.querySelector(seccionScroll2);
       seccion.scrollIntoView({ behaviour: "smooth" });
     });
+  });
+}
+
+function botonIrArriba() {
+  const btnVolverArriba = document.getElementById("volverArriba");
+  const sobreFestival = document.querySelector(".sobre-festival");
+
+  // Verifique la posición de desplazamiento y el botón mostrar/ocultar
+  window.addEventListener("scroll", function () {
+    const scrollPosition = window.scrollY; // GObtener la posición de desplazamiento actual
+    if (sobreFestival.getBoundingClientRect().bottom < 0) {
+      // Mostrar botón después de desplazarse por debajo de .sobre-festival
+      btnVolverArriba.classList.add("visible");
+    } else {
+      btnVolverArriba.classList.remove("visible");
+    }
+  });
+
+  // Agregar funcionalidad al hacer clic en el botón
+  btnVolverArriba.addEventListener("click", function () {
+    // desplácese hacia arriba sin problemas
+    document.documentElement.scrollTop = 0;
   });
 }

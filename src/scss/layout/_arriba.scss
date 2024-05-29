@@ -1,0 +1,44 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.btn-volver-arriba {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  display: none; /* Inicialmente oculto  */
+  width: 3.8rem;
+  height: 3.8rem;
+  background-color: v.$azul;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Efectos de transición suaves */
+  -webkit-box-shadow: 0 0 29.5px -6px #000000;
+  -moz-box-shadow: 0 0 29.5px -6px #000000;
+  box-shadow: 0 0 29.5px -6px #000000;
+
+  &:hover {
+    background-color: darken(v.$azul, 8);
+    -webkit-box-shadow: 0 0 29.5px 0.5px #000000;
+    -moz-box-shadow: 0 0 29.5px 0.5px #000000;
+    box-shadow: 0 0 29.5px 0.5px #000000;
+
+    img {
+      filter: invert(100);
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.btn-volver-arriba.visible {
+  display: block; /* Mostrar botón al desplazarse */
+}
+
+.btn-volver-arriba:hover {
+  /* Agregar efecto de desplazamiento */
+  background-color: v.$azul;
+}
