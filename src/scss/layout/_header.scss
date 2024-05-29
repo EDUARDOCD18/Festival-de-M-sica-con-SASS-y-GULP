@@ -1,70 +1,66 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
 
-/* -- Estilos para .header -- */
 .header {
   background-color: v.$verde;
+  width: 100%; // Asegura que el header tenga el ancho completo
 
-  /* Barra fija en tamaño teléfono */
   @include m.tablet {
     &.fijo {
-      left: 0;
-      top: 0;
       position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       box-shadow: 0.1rem 0.1rem 0.3rem #333;
+      z-index: 10; // Asegura que el header esté sobre otros elementos
     }
   }
 
-  /* -- Estilos para <h1> de .header -- */
   h1 {
     color: v.$blanco;
     text-align: center;
-
-    /* -- <h1> de .header en tamaño tablet -- */
+    
     @include m.tablet {
-      margin: 0; // margin de 0 para el <h1> en tamaño tablet
+      margin: 0;
     }
   }
 
-  /* -- Estilos para .contenido-header -- */
   .contenido-header {
     padding: 2rem;
-
-    /* -- .contenido-header en tamaño tablet -- */
+    
     @include m.tablet {
-      display: flex; // Aplica flex al tamaño tablet
-      justify-content: space-between; // espaciado entre items
-      align-items: center; // items alineados al centro
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }
 
-/* -- Estilos para .navegación-principal -- */
 .navegacion-principal {
-  /* -- navegacion-principal en tamaño tablet -- */
   @include m.tablet {
-    display: flex; // Aplica flex al tamaño tablet
-    gap: 2rem; // separacaión pareja
+    display: flex;
+    gap: 2rem;
   }
 
-  /*-- Estilos para los <a> de la .navegacion-principal -- */
   a {
     display: block;
     text-align: center;
     margin-bottom: 1rem;
     color: v.$blanco;
     font-size: 2.4rem;
-
-    /* -- <a> de .navegacion-principal en tamaño tablet -- */
+    
     @include m.tablet {
       margin: 0;
     }
 
-    /*-- psudoclases para .navegacion-principal */
     &:hover,
     &:focus {
       color: v.$amarillo;
     }
   }
+}
+
+// Compensación del espacio cuando el header se hace fijo
+body.header-fijo {
+  padding-top: 6rem; // Suponiendo que 60px es el alto del header, 60/16 = 3.75rem
 }

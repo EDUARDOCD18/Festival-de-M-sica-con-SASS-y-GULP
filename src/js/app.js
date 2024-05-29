@@ -76,14 +76,12 @@ function navegacionFija() {
   const body = document.querySelector("body");
 
   window.addEventListener("scroll", function () {
-    // Conocer la ubicación exacta de la pantalla en el scroll
-
     if (sobreFestival.getBoundingClientRect().bottom < 0) {
       barra.classList.add("fijo");
-      body.classList.add("body-scroll");
+      body.classList.add("header-fijo"); // Aplica el padding-top cuando el header es fijo
     } else {
       barra.classList.remove("fijo");
-      body.classList.remove("body-scroll");
+      body.classList.remove("header-fijo"); // Remueve el padding-top cuando el header no es fijo
     }
   });
 }
