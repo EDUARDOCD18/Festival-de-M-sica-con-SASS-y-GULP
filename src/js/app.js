@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function iniciarApp() {
   crearGaleria();
   scrollNav();
-  navegacionFija();
   botonIrArriba();
+  navegacionFija();
 }
 
 /* -- FUNCIONES PARA IMÁGENES-- */
@@ -32,6 +32,8 @@ function crearGaleria() {
 /* -- Imagen en Modal-- */
 function mostrarImagen(id) {
   const imagen = document.createElement("picture");
+  const btnArriba = document.getElementById("volverArriba");
+
   imagen.innerHTML = `<source srcset="build/img/grande/${id}.avif" type="image/avif" />
     <source srcset="build/img/grande/${id}.webp" type="image/webp" /><img loading="lazy" width="200" height="300" src="build/img/grande/${id}.jpg" alt="imagen galería"/>`;
 
@@ -39,12 +41,14 @@ function mostrarImagen(id) {
   const overlay = document.createElement("DIV");
   overlay.appendChild(imagen);
   overlay.classList.add("overlay");
+  btnArriba.classList.remove("btn-volver-arriba");
 
   /* -- Función para cerrar el overlay tocando en cualquier parte del mismo */
   overlay.onclick = function () {
     body.appendChild(overlay); // Agrega overlay al body
     body.classList.remove("fijar-body"); // Quita clase al body
     overlay.remove(); // Quita el overlay
+    btnArriba.classList.add("btn-volver-arriba");
   };
 
   /* -- Botón para cerrar el modal */
@@ -72,11 +76,11 @@ function mostrarImagen(id) {
 /* -- Función para la navegación fija -- */
 function navegacionFija() {
   const barra = document.querySelector(".header");
-  const sobreFestival = document.querySelector(".sobre-festival");
+  const lineup = document.querySelector(".lineup");
   const body = document.querySelector("body");
 
   window.addEventListener("scroll", function () {
-    if (sobreFestival.getBoundingClientRect().bottom < 0) {
+    if (lineup.getBoundingClientRect().top === 0) {
       barra.classList.add("fijo");
       body.classList.add("header-fijo"); // Aplica el padding-top cuando el header es fijo
     } else {
@@ -89,6 +93,7 @@ function navegacionFija() {
 /* -- Función para el scroll--  */
 function scrollNav() {
   const enlaces = document.querySelectorAll(".navegacion-principal a");
+
   enlaces.forEach((enlace) => {
     enlace.addEventListener("click", function (e) {
       e.preventDefault();
@@ -103,12 +108,12 @@ function scrollNav() {
 
 function botonIrArriba() {
   const btnVolverArriba = document.getElementById("volverArriba");
-  const sobreFestival = document.querySelector(".sobre-festival");
+  const lineup = document.querySelector(".lineup");
 
   // Verifique la posición de desplazamiento y el botón mostrar/ocultar
   window.addEventListener("scroll", function () {
     const scrollPosition = window.scrollY; // GObtener la posición de desplazamiento actual
-    if (sobreFestival.getBoundingClientRect().bottom < 0) {
+    if (lineup.getBoundingClientRect().top < 0) {
       // Mostrar botón después de desplazarse por debajo de .sobre-festival
       btnVolverArriba.classList.add("visible");
     } else {
