@@ -1,36 +1,38 @@
-@use "base/variables" as v;
-@use "base/mixins" as m;
-
 /* -- Estilos para lineup -- */
 .lineup {
-  background-color: v.$rosa;
+  background-color: $rosa;
   padding: 5rem 0;
 
   h3,
   p {
     text-align: center;
-    color: v.$blanco;
+    color: $blanco;
+    @include sombra-texto;
   }
 
   .dia {
+    @include sombra;
+    @include sombra-texto;
     text-transform: uppercase;
     margin: 5rem 30%;
-    background-color: darken(v.$rosa, 15%);
+    background-color: darken($rosa, 15%);
   }
 }
 
 /* -- Estilos para para los escenarios -- */
 .escenarios-contenedor {
-  @include m.tablet {
-    @include m.grid(2, 5rem);
+  @include tablet {
+    @include grid(2, 5rem);
   }
 
   p {
-    color: v.$negro;
+    color: $negro;
   }
 }
 
 .escenario {
+  @include sombra;
+
   padding-top: 2rem;
 
   p {
@@ -57,7 +59,7 @@
 
 /* -- Estilos para el calendario -- */
 .calendario {
-  @include m.resetear-lista;
+  @include resetear-lista;
 
   li {
     padding: 2.5rem;
@@ -70,17 +72,17 @@
 }
 
 .bg-amarillo {
-  background-color: v.$amarillo;
+  background-color: $amarillo;
 
   li:nth-child(odd) {
-    background-color: darken(v.$amarillo, 15%);
+    background-color: darken($amarillo, 15%);
   }
 }
 
 .bg-verde {
-  background-color: v.$verde;
+  background-color: $verde;
 
   li:nth-child(odd) {
-    background-color: darken(v.$verde, 10%);
+    background-color: darken($verde, 10%);
   }
 }

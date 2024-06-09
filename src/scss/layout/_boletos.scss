@@ -1,6 +1,3 @@
-@use "base/variables" as v;
-@use "base/mixins" as m;
-
 /* ESTILOS PARA .boletos */
 .boletos {
   padding: 5rem 0;
@@ -8,27 +5,28 @@
   /* h3 DE .boletos */
   h3 {
     text-align: center;
-    color: v.$blanco;
+    color: $blanco;
     margin-bottom: 2rem;
+    @include sombra-texto;
   }
 
   /* .contenedor-boletos */
   .contenedor-boletos {
-
     /* .boletos en tamaño tablet */
-    @include m.tablet {
-      @include m.grid(2, 5rem);
+    @include tablet {
+      @include grid(2, 5rem);
     }
   }
 }
 
 /* ESTILOS PARA .pase */
 .pase {
-
+  
   /* .nombre- pase */
   .nombre-pase {
     text-align: center;
-    color: v.$blanco;
+    color: $blanco;
+    @include sombra-texto;
     font-weight: 400;
     font-size: 2.8rem;
   }
@@ -36,16 +34,18 @@
   /* <header> y <footer> de .pase */
   &-header,
   &-footer {
+    @include sombra;
     padding: 0.5rem;
     p {
       text-align: center;
-      color: v.$blanco;
+      color: $blanco;
+      @include sombra-texto;
       margin: 0;
     }
   }
 
   &-header {
-    background-color: v.$rosa;
+    background-color: $rosa;
     p {
       text-transform: uppercase;
       font-size: 1.6rem;
@@ -53,20 +53,26 @@
   }
 
   &-body {
-    background-color: v.$blanco;
+    @include sombra;
+    background-color: $blanco;
+
     ul {
-      @include m.resetear-lista;
-      li,
-      :nth-child(odd) {
-        background-color: v.$blanco;
+      @include resetear-lista;
+      li {
+        background-color: darken($blanco, 10%);
+
         padding: 1rem;
         border-bottom: 1px solid #e1e1e1;
+
+        &:nth-child(odd) {
+          background-color: $blanco;
+        }
       }
     }
   }
 
   &-footer {
-    background-color: v.$morado;
+    background-color: $morado;
     p {
       font-size: 2.4rem;
       font-weight: 700;

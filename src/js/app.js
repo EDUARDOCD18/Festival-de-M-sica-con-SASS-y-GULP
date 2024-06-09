@@ -80,7 +80,8 @@ function navegacionFija() {
   const body = document.querySelector("body");
 
   window.addEventListener("scroll", function () {
-    if (lineup.getBoundingClientRect().top === 0) {
+    if (lineup.getBoundingClientRect().top <= 0) {
+      console.log("xd");
       barra.classList.add("fijo");
       body.classList.add("header-fijo"); // Aplica el padding-top cuando el header es fijo
     } else {

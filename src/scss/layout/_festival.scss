@@ -1,13 +1,10 @@
-@use "base/variables" as v;
-@use "base/mixins" as m;
-
 /* -- Estilos para.sobre-festival -- */
 .sobre-festival {
   padding: 5rem 0;
 
   /* -- .sobre-festival en tamaño tablet -- */
-  @include m.tablet {
-    @include m.grid(2, 5rem);
+  @include tablet {
+    @include grid(2, 5rem);
   }
 }
 
@@ -19,7 +16,7 @@
   margin-top: 5rem;
 
   /* -- .contenido-festival en tablet -- */
-  @include m.tablet {
+  @include tablet {
     margin-top: 0;
   }
 
@@ -31,7 +28,7 @@
 
   /* -- Estilos para .fecha detro de .contenido-festival-- */
   .fecha {
-    color: v.$rosa;
+    color: $rosa;
     font-weight: 700;
   }
 }

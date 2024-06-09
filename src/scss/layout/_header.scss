@@ -1,11 +1,13 @@
-@use "base/variables" as v;
-@use "base/mixins" as m;
-
 .header {
-  background-color: v.$verde;
+  background-color: $verde;
   width: 100%; // Asegura que el header tenga el ancho completo
 
-  @include m.tablet {
+  .titulo-principal,
+  .navegacion-principal {
+    @include sombra-texto;
+  }
+
+  @include tablet {
     &.fijo {
       position: fixed;
       top: 0;
@@ -17,18 +19,19 @@
   }
 
   h1 {
-    color: v.$blanco;
+    color: $blanco;
     text-align: center;
     
-    @include m.tablet {
+
+    @include tablet {
       margin: 0;
     }
   }
 
   .contenido-header {
     padding: 2rem;
-    
-    @include m.tablet {
+
+    @include tablet {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -37,7 +40,7 @@
 }
 
 .navegacion-principal {
-  @include m.tablet {
+  @include tablet {
     display: flex;
     gap: 2rem;
   }
@@ -46,16 +49,16 @@
     display: block;
     text-align: center;
     margin-bottom: 1rem;
-    color: v.$blanco;
+    color: $blanco;
     font-size: 2.4rem;
-    
-    @include m.tablet {
+
+    @include tablet {
       margin: 0;
     }
 
     &:hover,
     &:focus {
-      color: v.$amarillo;
+      color: $amarillo;
     }
   }
 }

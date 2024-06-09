@@ -1,6 +1,3 @@
-@use "base/variables" as v;
-@use "base/mixins" as m;
-
 /* -- Estilos para .video -- */
 .video {
   position: relative;
@@ -30,7 +27,7 @@
     display: block;
 
     /* -- <video> en tamaño desktop -- */
-    @include m.desktop {
+    @include desktop {
       width: 100%;
     }
   }
@@ -38,21 +35,22 @@
 
 /* -- Estilos para .contenido-video -- */
 .contenido-video {
+  @include sombra-texto;
   z-index: 10;
 
   /* -- Estilos para <h2> de .contenido-video -- */
   h2 {
-    color: v.$blanco;
+    color: $blanco;
     font-size: 7rem;
     margin: 0;
   }
 
   /* -- Estilos para <p> de .contenido-video -- */
   p {
-    background-color: v.$rosa;
+    background-color: $rosa;
     display: inline-block;
     padding: 1rem 2rem;
-    color: v.$blanco;
+    color: $blanco;
     font-weight: 700;
     font-size: 2.4rem;
     margin: 0;

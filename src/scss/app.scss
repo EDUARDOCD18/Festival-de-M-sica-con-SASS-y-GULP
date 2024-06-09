@@ -1,3 +1,14 @@
-@use "base";
-@use "contenido";
-@use "layout";
+@import "base/normalize";
+@import "base/variables";
+@import "base/mixins";
+@import "base/globales";
+
+
+@import "layout/header";
+@import "layout/footer";
+@import "layout/festival";
+@import "layout/arriba";
+@import "layout/boletos";
+@import "layout/galeria";
+@import "layout/lineup";
+@import "layout/video";
